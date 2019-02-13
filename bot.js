@@ -11,7 +11,7 @@ console.log("games");
  
 
 client.on('message', message => {
-    if (message.content == "#سرعه") {
+    if (message.content == "#اسرع") {
         var x = ["DreamKing",
 "DeathGames",
 "زيرو كنج",
