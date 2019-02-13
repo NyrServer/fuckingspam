@@ -7,80 +7,225 @@ client.on('ready', () => {
 
 
 
-console.log("BOT ONLINE");
+console.log("games");
  
+var prefix = "#";
 client.on('message', message => {
-    if(message.author.bot) return;
-              if (message.content.startsWith(prefix + 'فكك')) {
-                if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+    if (message.content == "#سرعه") {
+        var x = ["DreamKing",
+"DeathGames",
+"زيرو كنج",
+"أرض الأحلام",
+"ألبرازيل",
+"العراق",
+"ألمملكة ألعربية ألسعودية",
+"القسطنطينية",
+"النهاية",
+"امازون",
+"جافاسكربت",
+"سهله مو صعبه",
+"طبق رطب مرق بقر",
+"متجر",
+"شجرة الأوغيري",
+"عش العصفور",
+"هلا بلخميس",
+"الحوت الأزرق",
+"بلاد الرافدين",
+"كانيكي",
+"توكا",
+"عادل امام",
+"عمرو ذياب",
+"عمان",
+"مسقط",
+"بغداد عاصمة العراق",
+"Playing Minecraft",
+"Music",
+"FaceBooK",
+"YouTube",
+"Infinity",
+"احب نفسي لانها نفسي",
+"Don't Let Me Down",
+"Space",
+"Instgram",
+"Google",
+"Viber",
+];
+        var x2 = ['DreamKing',
+        "DeathGames",
+        "زيرو كنج",
+        "أرض الأحلام",
+		"ألبرازيل",
+		"العراق",
+		"ألمملكة ألعربية ألسعودية",
+		"القسطنطينية",
+		"النهاية",
+		"امازون",
+		"جافاسكربت",
+		"سهله مو صعبه",
+		"طبق رطب مرق بقر",
+		"متجر",
+		"شجرة الأوغيري",
+		"عش العصفور",
+		"هلا بلخميس",
+		"الحوت الأزرق",
+        "بلاد الرافدين",
+        "كانيكي",
+        "توكا",
+        "عادل امام",
+        "عمرو ذياب",
+        "عمان",
+        "مسقط",
+        "بغداد عاصمة العراق",
+        "Playing Minecraft",
+        "Music",
+        "FaceBooK",
+        "YouTube",
+        "Infinity",
+        "احب نفسي لانها نفسي",
+        "Don't Let Me Down",
+		"Space",
+		"Instgram",
+		"Google",
+		"Viber",
+		
+        
+        
+        
+        
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        message.channel.send(` اول شخص يكتب :  __**${x[x3]}**__
+لديك 15 ثانية للاجابة`).then(msg1=> {
+            var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return message.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            الإجآبة الصحيحةة هي __**${x2[x3]}**__`)
+        })
+        
+        r.then((collected)=> {
+            message.channel.send(`${collected.first().author} لقد قمت بكتابة الكلمة في الوقت المناسب  `);
+        })
+        })
+    }
+})
 
-              const type = require('./fkk.json');
-              const item = type[Math.floor(Math.random() * type.length)];
-           let author = message.author;
-              const filter = response => {
-                
-                  return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-              };
-              message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').then(msg => {
+client.on('message', puz => {
+    if (puz.content == "#لغز") {
+        var x = ["ما هي حاسة الشم عند الثعبان ؟",
+"ما هو الشي الذي يكسو الناس و هو عار بدون ملابس ؟",
+"ما هو الشي الذي لا يجري و لا يمشي ؟",
+"ما هو إسم الشهر الميلادي الذي إذا حذفت أوله , تحول إلى إسم فاكهه ؟",
+"ما هو الشي الذي لا يدخل الإ إذا ضرب على رأسه ؟",
+"ما هو الشيء الذي اسمه على لونه ؟",
+"ما هو الشي الذي كلما زاد نقص ؟",
+"ما هي التي تحرق نفسها لتفيد غيرها ؟",
+"كله ثقوب و مع ذلك يحفظ الماء ؟",
+"ما هو الذي لحمه من الداخل و عظمه من الخارج ؟",
+"يستطيع ان يخترق الزجاج من دون كسره .. فما هو ؟",
+];
+        var x2 = ['اللسان',
+		"الابره",
+        "الماء",
+		"تموز",
+		"المسمار",
+		"البيضة",
+		"العمر",
+		"الشمعة",
+		"الاسفنج",
+		"السلحفاة",
+		"الضوء",
+        
+        
+        
+        
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        puz.channel.send(`السؤال هو:  __**${x[x3]}**__
+لديك 20 ثانية للاجابة`).then(msg1=> {
+            var r = puz.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return puz.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            `)
+        })
+        
+        r.then((collected)=> {
+            puz.channel.send(`${collected.first().author} لقد قمت بحل اللغز في الوقت المناسب  `);
+        })
+        })
+    }
+})
 
- const w = ['./img.rar/w1.png'];//الخافيه
-            let Image = Canvas.Image,
-            canvas = new Canvas(400, 150),
-            ctx = canvas.getContext('2d');
-    
-            fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-            if (err) return console.log(err);
-            let BG = Canvas.Image;
-            let ground = new Image;
-            ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 400, 150);
- 
-});
- let url = message.author.displayAvatarURL.endsWith(".webp") ? message.author.displayAvatarURL.slice(5, -20) + ".png" : message.author.displayAvatarURL;
-               jimp.read(url, (err, ava) => {
-                    if (err) return console.log(err);
-                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                        if (err) return console.log(err);
-                       
-                      
-                        ctx.font = '15px Arial';
-                              ctx.fontSize = '10px';
-                              ctx.fillStyle = "#FFFFFF";
-                              ctx.textAlign = "center";
-              ctx.fillText(`${item.type} ` , 250, 100);
-              
-               let Avatar = Canvas.Image;
-                              let ava = new Avatar;
-                              ava.src = buf;
-                              ctx.beginPath();
-                              ctx.arc(70, 80, 63, 0, Math.PI*2);
-                                 ctx.closePath();
-                                 ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
-message.channel.sendFile(canvas.toBuffer());
- })
-             
-                      message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })//وقت الاجابة
-                      .then((collected) => {
-                           var embed = new Discord.RichEmbed()
-                            .setDescription(`${collected.first().author} ✅ احسنت لقد تمكنت من تفكيك الكلمه بسرعه`)
-                 message.channel.send(embed);
-                  console.log(`[Typing] ${collected.first().author} typed the word.`);
-                          let won = collected.first().author;
-                          points[won.id].points++;
-                        })
-                        .catch(collected => {
-                       var embed1 = new Discord.RichEmbed()
-                            .setDescription(`:x: لم يتمكن احد من تفكيك الكلمه في الوقت المناسب`)
-                 message.channel.send(embed1);
-                    console.log('[Typing] Error: No one type the word.');
-           
-                  })
-                })
-             
-  })
-}
+client.on('message', fkk => {
+    if (fkk.content == "#فكك") {
+        var x = ["المتاح للجميع لا يتاح لي",
+"خعاخع",
+"فيلا",
+"بريء",
+"بسم الله الرحمن الرحيم",
+"الضرورة",
+"دنيا",
+"صارم",
+"مات",
+"شعبان شبعان",
+"ألعراق",
+];
+        var x2 = ['ا ل م ت ا ح ل ل ج م ي ع ل ا ي ت ا ح ل ى',
+		"خ ع ا خ ع",
+        "ف ي ل ا",
+		"ب ر ي ء",
+		"ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م",
+		"ا ل ض ر و ر ة",
+		"د ن ي ا",
+		"ص ا ر م",
+		"م ا ت",
+		"ش ع ب ا ن ش ب ع ا ن",
+		"أ ل ع ر ا ق",
+        
+        
+        
+        
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        fkk.channel.send(`اول شخص يفكك :  __**${x[x3]}**__
+لديك 15 ثانية للاجابة`).then(msg1=> {
+            var r = fkk.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return fkk.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            الإجآبة الصحيحةة هي __**${x2[x3]}**__`)
+        })
+        
+        r.then((collected)=> {
+            fkk.channel.send(`${collected.first().author} لقد قمت بفكيك الجملة في الوقت المناسب`);
+        })
+        })
+    }
+})
 
+
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Cyhper Script By : NyR`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : NyR ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`NyR Games`,"http://twitch.tv/Light")
+client.user.setStatus("dnd")
 });
 
 
