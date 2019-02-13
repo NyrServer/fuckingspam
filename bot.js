@@ -26,7 +26,7 @@ client.on('message', message => {
               };
               message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').then(msg => {
 
- const w = ['./img/w1.png'];//الخافيه
+ const w = ['./img.rar/w1.png'];//الخافيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
