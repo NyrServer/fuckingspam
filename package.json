@@ -1,13 +1,15 @@
+
+
 {
-  "name": "luxurybot",
-  "description": "A discord bot for didney worl who has an appetite for non-nutritive substances",
-  "version": "1.0.0",
+  "name": "bytetech",
+  "version": "2.1.0",
+  "description": "-- AWESOMENESS --",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-     "discord.js": "^11.3.0",
+      "discord.js": "^11.3.0",
     "dotenv": "^4.0.0",
     "googleapis": "^20.2.0",
     "node-opus": "^0.2.7",
@@ -36,5 +38,8 @@
     "opusscript": "^0.0.6",
     "sqlite": "^2.9.1",
     "short-number": "^1.0.6"
+  },
+  "engines": {
+    "node": "8.4.0"
   }
 }
