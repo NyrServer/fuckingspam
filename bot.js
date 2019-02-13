@@ -11,7 +11,6 @@ console.log("BOT ONLINE");
  
 client.on('message', message => {
     if(message.author.bot) return;
-           };
               if (message.content.startsWith(prefix + 'فكك')) {
                 if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
