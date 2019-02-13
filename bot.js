@@ -11,7 +11,6 @@ console.log("BOT ONLINE");
  
 client.on('message', message => {
     if(message.author.bot) return;
-            if (!points[message.author.id]) points[message.author.id] = {
              points: 0,id: message.author.id
            };
               if (message.content.startsWith(prefix + 'فكك')) {
